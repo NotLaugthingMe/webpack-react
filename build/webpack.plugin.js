@@ -125,6 +125,7 @@ module.exports = function () {
       })
     );
   }
+  return plugin;
 };
 
 
