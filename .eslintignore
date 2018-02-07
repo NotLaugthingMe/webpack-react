@@ -1,0 +1,6 @@
+src/image
+node_modules/
+dist/
+build/
+config/
+
