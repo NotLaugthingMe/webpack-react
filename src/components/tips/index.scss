@@ -1,0 +1,46 @@
+/**
+ * Created by chenlin on 2018/2/9 0009.
+ */
+@import "../../common/style/mix";
+.tips_box{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999999;
+  text-align: center;
+  width: 80%;
+}
+.tips{
+  padding: .3125em .625em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  @include font-dpr(14px);
+  p{
+    text-align: left;
+    word-break: break-all;
+  }
+}
+
+.tips-error{
+  @include font-dpr(14px);
+  //padding-top: .8+em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:before{
+    margin-top: -1/14 + em;
+    display: block;
+    content: '';
+    width: 2.5+em;
+    height: 1.25+em;
+    background: url("./icon-error.png") center no-repeat;
+    background-size: 1.25em;
+  }
+  p{
+    display: block;
+    text-align: center;
+  }
+}

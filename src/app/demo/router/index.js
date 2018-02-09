@@ -4,13 +4,13 @@
 import React from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import {asyncComponent} from 'components/asyncComponent/index';
-const Index = asyncComponent(()=>import('../page/index'));
+const Index = asyncComponent(()=>import('../page/index/index.js'));
 export default class RouterConfig extends React.Component{
   render() {
     return (
       <Router>
         <div>
-          <Route path="/index" components={Index}/>
+          <Route exact path="/" component={Index}/>
         </div>
       </Router>
     );

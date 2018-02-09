@@ -11,7 +11,7 @@ module.exports = {
   ROOT_PATH,
   ENTRY_PATH: 'src/app/**/app.js',
   BUILD_PATH: path.resolve(ROOT_PATH, './dist'),
-  PUBLIC_PATH: '/',
+  PUBLIC_PATH: '/webpack-react',
   port: 9000,
   proxyConfig: {
     "/har-cashier-front/api": "http://192.168.3.117:7300/mock/5a7903a5934a2c00178794ab"

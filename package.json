@@ -25,6 +25,7 @@
     "axios": "^0.17.1",
     "better-scroll": "^1.8.0",
     "classnames": "^2.2.5",
+    "lib-flexible": "^1.0.1",
     "rc-queue-anim": "^1.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

@@ -22,7 +22,7 @@
           },
           {
             "transform": "react-transform-catch-errors",
-            "imports": ["react"]
+            "imports": ["react", "redbox-react"]
           }
           ]
         }]

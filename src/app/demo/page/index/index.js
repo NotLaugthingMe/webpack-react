@@ -5,9 +5,12 @@
 import React from 'react';
 import './index.scss';
 export default class Index extends React.Component{
+  componentDidMount() {};
   render() {
     return (
-      <div>我的世界在哪里</div>
+      <div className="index">
+        我的世界
+      </div>
     );
   }
 }

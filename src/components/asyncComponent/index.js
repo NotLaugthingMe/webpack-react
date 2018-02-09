@@ -14,7 +14,7 @@ export const asyncComponent = loadComponent => (
       }
       loadComponent()
         .then(module => module.default)
-        .then((Component) => {
+        .then(Component => {
           this.setState({ Component });
         })
         .catch((err) => {

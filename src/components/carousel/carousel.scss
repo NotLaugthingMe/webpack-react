@@ -1,0 +1,18 @@
+/**
+ * Created by chenlin on 2018/2/8 0008.
+ */
+.carousel-container{
+  position: relative;
+  .carousel-wrapper{
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 100;
+    .carousel-item{
+      float: left;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-align: center;
+    }
+  }
+}
