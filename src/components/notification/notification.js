@@ -48,8 +48,8 @@ class Notification extends React.Component{
       <div {...others}>
         {
           notices.map((notice, idx)=>{
-            const {className, content} = notice;
-            return <Notice key={idx} className={className}>{content}</Notice>;
+            const {className, content, ...others} = notice;
+            return <Notice key={idx} className={className} {...others}>{content}</Notice>;
           })
         }
       </div>
