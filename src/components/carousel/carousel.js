@@ -4,6 +4,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import classNames from 'classnames';
 import BScroll from 'better-scroll';
 import './carousel.scss';
 export default class Carousel extends React.Component{
@@ -20,7 +21,8 @@ export default class Carousel extends React.Component{
     autoPlay: false,
     interval: 3000,
     threshold: 100,
-    speed: 400
+    speed: 400,
+    showDots: false
   };
   componentDidMount() {
     this.updateCarousel();
@@ -46,16 +48,15 @@ export default class Carousel extends React.Component{
   setCarouselWidth=()=>{
     const container = ReactDOM.findDOMNode(this);
     const wrapper = container.getElementsByClassName('carousel-wrapper')[0];
-    let items = container.getElementsByClassName('carousel-item');
-    items = [].slice.call(items);
-    const containerWidth = container.clientWidth;
+    const elems = [].slice.call(container.getElementsByClassName('carousel-item'));
+    const carouselWidth = container.clientWidth;
     let width = 0;
-    items.map(item=>{
-      item.style.width = containerWidth + 'px';
-      width += containerWidth;
+    elems.map((elem, idx)=>{
+      elem.style.width = carouselWidth + 'px';
+      width += carouselWidth;
     });
     if (this.props.loop) {
-      width += 2 * containerWidth;
+      width += 2 * carouselWidth;
     }
     wrapper.style.width = width + 'px';
   };
@@ -73,6 +74,17 @@ export default class Carousel extends React.Component{
       bounce: true
     });
     this.myCarousel.on('scrollEnd', this.ScrollEnd);
+  };
+  createDots=()=>{
+    const {currentPageIndex} = this.state;
+    return this.props.children.map((dot, idx)=>{
+      const cls = classNames({
+        'dot': true,
+        'active': currentPageIndex === idx
+      });
+      return <span key={idx} className={cls}>
+      </span>;
+    });
   };
   ScrollEnd=()=>{
     const currentPageIndex = this.myCarousel.getCurrentPage().pageX;
@@ -95,12 +107,17 @@ export default class Carousel extends React.Component{
     this.myCarousel.next();
   };
   render() {
-    const {children} = this.props;
+    const {children, showDots} = this.props;
     return (
       <div className="carousel-container" ref="carousel-container">
         <div className="carousel-wrapper" ref="carousel-wrapper">
           {children}
         </div>
+        {
+          showDots ? <div className="carousel-dots">
+            {this.createDots()}
+          </div> : null
+        }
       </div>
     );
   }
