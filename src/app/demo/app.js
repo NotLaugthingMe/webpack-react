@@ -2,7 +2,7 @@
  * Created by chenlin on 2018/2/7 0007.
  */
 import '../../index.scss';
-import 'lib-flexible';
+import 'utils/flexible';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RouterConfig from './router/index';

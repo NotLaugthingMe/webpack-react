@@ -4,13 +4,16 @@
 
 import React from 'react';
 import './index.scss';
+import Swiper from 'components/swiper/swiper';
 export default class Index extends React.Component{
   componentDidMount() {
   };
   render() {
     return (
       <div className="index">
-        我的世界
+        <Swiper>
+          <p> 我的世界</p>
+        </Swiper>
       </div>
     );
   }

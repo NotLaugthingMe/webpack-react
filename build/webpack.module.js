@@ -24,7 +24,13 @@ const rules = [
   },
   {
     test: /\.(css|scss)$/,
-    use: ["style-loader", "css-loader","postcss-loader","sass-loader"],
+    use: ["style-loader",{
+      loader: 'css-loader',
+      options: {
+        modules: true,
+        localIdentName: '[path][name]__[local]--[hash:base64:8]'
+      }
+    },"postcss-loader","sass-loader"],
     include: ROOT_PATH
   },
   {

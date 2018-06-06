@@ -6,7 +6,7 @@ const entry = require('./webpack.entry');
 const plugin = require('./webpack.plugin');
 const mode = require('./webpack.module');
 const {ROOT_PATH, BUILD_PATH, PUBLIC_PATH,isDev, ALIAS, port, proxyConfig} = require('../config/index');
-
+console.log(2);
 module.exports = function () {
   return {
     devtool: isDev ? 'eval-source-map' : false,
